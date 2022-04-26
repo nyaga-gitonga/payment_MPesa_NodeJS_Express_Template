@@ -48,8 +48,8 @@ class MpesaApi {
             PartyA: body.PartyA,
             PartyB: body.PartyB,
             Remarks: body.Remarks,
-            QueueTimeOutURL: config.host + "/sampe/timeout/b2c",
-            ResultURL: config.host + "/sampe/result/b2c",
+            QueueTimeOutURL: config.host + "/<api route name>/timeout/b2c",
+            ResultURL: config.host + "/<api route name>/result/b2c",
             Occasion: body.Occasion,
           },
         });
@@ -77,8 +77,8 @@ class MpesaApi {
           data: {
             ShortCode: config.mpesaApi.shortcode,
             ResponseType: ResponseType,
-            ConfirmationURL: config.host + "/sampe/confirmation/c2b",
-            ValidationURL: config.host + "/sampe/validation/c2b",
+            ConfirmationURL: config.host + "/<api route name>/confirmation/c2b",
+            ValidationURL: config.host + "/<api route name>/validation/c2b",
           },
         });
         if (response.status == 200) {
@@ -110,8 +110,8 @@ class MpesaApi {
             PartyA: body.PartyA,
             IdentifierType: "4",
             Remarks: body.Remarks,
-            QueueTimeOutURL: config.host + "/sampe/result/acB",
-            ResultURL: config.host + "/sampe/timeout/acB",
+            QueueTimeOutURL: config.host + "/<api route name>/result/acB",
+            ResultURL: config.host + "/<api route name>/timeout/acB",
           },
         });
         if (response.status == 200) {
@@ -143,8 +143,8 @@ class MpesaApi {
             TransactionID: body.TransactionID,
             PartyA: body.PartyA,
             IdentifierType: "1",
-            ResultURL: `${config.host}/sampe/result/status`,
-            QueueTimeOutURL: `${config.host}/sampe/timeout/status`,
+            ResultURL: `${config.host}/<api route name>/result/status`,
+            QueueTimeOutURL: `${config.host}/<api route name>/timeout/status`,
             Remarks: body.Remarks,
             Occasion: body.Occasion,
           },
@@ -179,8 +179,8 @@ class MpesaApi {
             Amount: body.Amount,
             ReceiverParty: body.ReceiverParty,
             RecieverIdentifierType: "4",
-            ResultURL: `${config.host}/sampe/result/reverse`,
-            QueueTimeOutURL: `${config.host}/sampe/timeout/reverse`,
+            ResultURL: `${config.host}/<api route name>/result/reverse`,
+            QueueTimeOutURL: `${config.host}/<api route name>/timeout/reverse`,
             Remarks: body.Remarks,
             Occasion: body.Occasion,
           },
@@ -218,7 +218,7 @@ class MpesaApi {
             PartyA: body.PhoneNumber,
             PartyB: config.mpesaApi.till,
             PhoneNumber: body.PhoneNumber,
-            CallBackURL: `${config.host}/sampe/callback/stkpush`,
+            CallBackURL: `${config.host}/<api route name>/callback/stkpush`,
             AccountReference: body.AccountReference,
             TransactionDesc: body.TransactionDesc,
           },
